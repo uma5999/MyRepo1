@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+ <body>
+<h2 align="center">Test Project</h2>
+<hr/>
+
+<button class="btn btn-success btn-lg" (click)=refreshPage()>Refresh it!!</button>
+<button class="btn btn-success btn-lg" (click)=loadUserInfo()>Get User Info</button>
+<!-- <button class="btn btn-success btn-lg" (click)="function()">Login</button>
+ <button class="btn btn-success btn-lg" (click)="">Register</button>  -->
+
+<div>
+  <h2>Page to display list of Users</h2>
+  </div>
+  <div *ngIf="b">
+  <table class="table table-hover">
+     <caption>Users Available</caption>
+     <thead class="thead-dark">
+      <tr>
+          <th><label>ID</label></th>
+          <th><label>Name</label></th>
+          <th><label>UserName</label></th>
+          <th><label>Email</label></th>
+          <th><label>Phone</label></th>
+          <th><label>Street</label></th>
+          <th><label>Lattitude</label></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of myUsers"> 
+          <td>{{user.id}}</td>
+          <td>{{user.name|lowercase}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.phone}}</td>
+          <td>{{user.address.street}}</td>
+          <td>{{user.address.geo.lat}}</td>
+          </tr>
+          </tbody>
+  </table>
+  </div>
+  
+  </body>
+  </html>
